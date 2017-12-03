@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TeamsComponent } from './teams/teams.component';
@@ -15,7 +16,7 @@ import { PlayerService } from './player.service';
 import { PlayerComponent } from './player/player.component';
 import { Routes } from '@angular/router';
 import { WeeksComponent } from './weeks/weeks.component';
-import { GetComponent } from './get/get.component'
+import { GetComponent } from './get/get.component';
 
 
 
@@ -25,7 +26,7 @@ import { GetComponent } from './get/get.component'
     AppComponent,
     TeamsComponent,
     HomeComponent,
-    MatchesComponent,
+    MatchesComponent, 
     PlayersComponent,
     PlayerComponent,
     WeeksComponent,
@@ -33,6 +34,7 @@ import { GetComponent } from './get/get.component'
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpModule,
     CommonModule,
     RouterModule.forRoot([
