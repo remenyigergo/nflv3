@@ -1,0 +1,35 @@
+<div style="text-align: center; margin-top:70px; font-size: 30px">PLAYERS</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="table-responsive">
+        <table id="escalation" class="table table-bordered"  style=" width: 800px; margin: auto; margin-top: 10px; margin-bottom: 25px" >
+            <tr>
+              <th>Name</th>
+              <th>Birth Date</th>
+              <th>Position</th>
+              <th>Height</th>
+              <th>Weight</th>
+              <th>Team</th>
+            </tr>
+            <tr class="success">
+              <tr *ngFor="let player of players; let i=index">
+                <td><a href="/player/{{players[i].id}}">{{ players[i].name }}</a></td>
+                <td>{{ players[i].birthDate}}</td>
+                <td>{{ players[i].position }}</td>
+                <td>{{ players[i].height }} cm</td>
+                <td>{{ players[i].weight }} kg</td>
+                <!--<td>{{ players[i].team }}</td>-->
+                
+                  <ng-container *ngFor="let t of teams; let j=index">
+                      <td *ngIf="teams[j].id==players[i].team">{{ teams[j].name }}</td>
+                </ng-container>
+                
+              </tr>
+            </table>
+            
+           
+          </div>
+        </div>
+      </div>
+      

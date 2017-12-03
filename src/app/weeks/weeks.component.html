@@ -1,0 +1,295 @@
+<h1 style="text-align: center; margin-top:70px">
+  Matches</h1>
+<h3 style="text-align: center;">Week {{num}}</h3>
+<div class="container">
+  <div class="row">
+    <div class="table-responsive">
+      <table id="escalation" class="table table-bordered" style="margin: auto; margin-top: 10px; margin-bottom: 25px; overflow-x:auto;">
+        <tr>
+          <th>Date</th>
+          <th>Guest</th>
+          <th>Home</th>
+          <th>Score</th>
+          <th>Passed Yards</th>
+          <th>PY Points</th>
+          <th>Rushed Yards</th>
+          <th>RY Points</th>
+          <th>Received Yards</th>
+          <th>RY Yards</th>
+        </tr>
+
+        <!-------------------AZ ELSŐHÉTEN VAGYUNK---------------------->
+
+        <ng-container *ngIf="num == 1">
+          <ng-container *ngIf="page == 1">
+            <tr class="success">
+              <tr *ngFor="let week of week1Page1">
+                <ng-container *ngIf="week.week == num">
+                  <td>{{ week.date }}</td>
+                  <!-- ITT FOGJUK KIKERESNI MELYIK ID-hez MELYIK CSAPAT TARTOZIK -->
+                  <ng-container *ngFor="let team of teams">
+                    <td *ngIf="team.id==week.guestId">{{ team.name }}</td>
+                    <td *ngIf="team.id==week.homeId">{{ team.name }}</td>
+                  </ng-container>
+
+                  <td>{{ week.guestScore }} - {{ week.homeScore }}</td>
+                  <td>{{ week.PassYds }}</td>
+                  <td>{{ week.PassYdsPoints }}</td>
+                  <td>{{ week.RushYds }}</td>
+                  <td>{{ week.RushYdsPoints }}</td>
+                  <td>{{ week.RecYds }}</td>
+                  <td>{{ week.RecYdsPoints }}</td>
+                </ng-container>
+              </tr>
+          </ng-container>
+
+          <ng-container *ngIf="page == 2">
+
+            <tr class="success">
+              <tr *ngFor="let week of week1Page2">
+                <ng-container *ngIf="week.week == num">
+                  <td>{{ week.date }}</td>
+                  <!-- ITT FOGJUK KIKERESNI MELYIK ID-hez MELYIK CSAPAT TARTOZIK -->
+                  <ng-container *ngFor="let team of teams">
+                    <td *ngIf="team.id==week.guestId">{{ team.name }}</td>
+                    <td *ngIf="team.id==week.homeId">{{ team.name }}</td>
+                  </ng-container>
+
+                  <td>{{ week.guestScore }} - {{ week.homeScore }}</td>
+                  <td>{{ week.PassYds }}</td>
+                  <td>{{ week.PassYdsPoints }}</td>
+                  <td>{{ week.RushYds }}</td>
+                  <td>{{ week.RushYdsPoints }}</td>
+                  <td>{{ week.RecYds }}</td>
+                  <td>{{ week.RecYdsPoints }}</td>
+                </ng-container>
+              </tr>
+          </ng-container>
+          <div aria-label="Page navigation example" class="text-xs-center">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="matches/weeks/1/page/1">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="matches/weeks/1/page/2">2</a>
+              </li>
+            </ul>
+          </div>
+        </ng-container>
+        <!--------------------ELSŐ HÉT VÉGE------------------------>
+
+
+        <!-------------------A MÁSODIK HÉTEN VAGYUNK---------------------->
+        <ng-container *ngIf="num == 2">
+          <ng-container *ngIf="page == 1">
+            <tr class="success">
+              <tr *ngFor="let week of week2Page1">
+                <ng-container *ngIf="week.week == num">
+                  <td>{{ week.date }}</td>
+                  <!-- ITT FOGJUK KIKERESNI MELYIK ID-hez MELYIK CSAPAT TARTOZIK -->
+                  <ng-container *ngFor="let team of teams">
+                    <td *ngIf="team.id==week.guestId">{{ team.name }}</td>
+                    <td *ngIf="team.id==week.homeId">{{ team.name }}</td>
+                  </ng-container>
+
+                  <td>{{ week.guestScore }} - {{ week.homeScore }}</td>
+                  <td>{{ week.PassYds }}</td>
+                  <td>{{ week.PassYdsPoints }}</td>
+                  <td>{{ week.RushYds }}</td>
+                  <td>{{ week.RushYdsPoints }}</td>
+                  <td>{{ week.RecYds }}</td>
+                  <td>{{ week.RecYdsPoints }}</td>
+                </ng-container>
+              </tr>
+          </ng-container>
+
+          <ng-container *ngIf="page == 2">
+            <tr class="success">
+              <tr *ngFor="let week of week2Page2">
+                <ng-container *ngIf="week.week == num">
+                  <td>{{ week.date }}</td>
+                  <!-- ITT FOGJUK KIKERESNI MELYIK ID-hez MELYIK CSAPAT TARTOZIK -->
+                  <ng-container *ngFor="let team of teams">
+                    <td *ngIf="team.id==week.guestId">{{ team.name }}</td>
+                    <td *ngIf="team.id==week.homeId">{{ team.name }}</td>
+                  </ng-container>
+
+                  <td>{{ week.guestScore }} - {{ week.homeScore }}</td>
+                  <td>{{ week.PassYds }}</td>
+                  <td>{{ week.PassYdsPoints }}</td>
+                  <td>{{ week.RushYds }}</td>
+                  <td>{{ week.RushYdsPoints }}</td>
+                  <td>{{ week.RecYds }}</td>
+                  <td>{{ week.RecYdsPoints }}</td>
+                </ng-container>
+              </tr>
+          </ng-container>
+
+          <div style="text-align: center; margin: auto; width: 00%">
+            <nav>
+              <ul class="pagination">
+
+                <li class="page-item">
+                  <a class="page-link" href="/matches/weeks/2/page/1">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="/matches/weeks/2/page/2">2</a>
+                </li>
+
+              </ul>
+            </nav>
+          </div>
+
+        </ng-container>
+        <!--------------------MÁSODIK HÉT VÉGE------------------------>
+
+      </table>
+      <ng-container *ngTemplateOutlet="queries"></ng-container>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #queries>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+
+
+        <h4>Week {{num}} Top Passers</h4>
+        <table id="escalation" class="table table-bordered" style="margin-top: 10px; margin-bottom: 25px; overflow-x:auto; width: 200px">
+          <tr>
+            <th>Player</th>
+            <th>Yards</th>
+          </tr>
+
+          <ng-container *ngIf="num == 1">
+            <tr class="success">
+              <tr *ngFor="let passers of week1TopPassers">
+                <td>{{ passers.PassYds }}</td>
+                <td>{{ passers.PassYdsPoints }}</td>
+              </tr>
+          </ng-container>
+
+          <ng-container *ngIf="num == 2">
+            <tr class="success">
+              <tr *ngFor="let passers of week2TopPassers">
+                <td>{{ passers.PassYds }}</td>
+                <td>{{ passers.PassYdsPoints }}</td>
+              </tr>
+          </ng-container>
+
+        </table>
+      </div>
+
+      <div class="col-sm">
+        <h4>Week {{num}} Top Rushers</h4>
+        <table id="escalation" class="table table-bordered" style="margin-top: 10px; margin-bottom: 25px; overflow-x:auto; width: 200px">
+          <tr>
+            <th>Player</th>
+            <th>Yards</th>
+          </tr>
+
+          <ng-container *ngIf="num == 1">
+            <tr class="success">
+              <tr *ngFor="let passers of week1TopRushers">
+                <td>{{ passers.PassYds }}</td>
+                <td>{{ passers.PassYdsPoints }}</td>
+              </tr>
+          </ng-container>
+
+          <ng-container *ngIf="num == 2">
+            <tr class="success">
+              <tr *ngFor="let passers of week2TopRushers">
+                <td>{{ passers.PassYds }}</td>
+                <td>{{ passers.PassYdsPoints }}</td>
+              </tr>
+          </ng-container>
+
+        </table>
+      </div>
+
+      <div class="col-sm">
+        <h4>Week {{num}} Top Receivers</h4>
+        <table id="escalation" class="table table-bordered" style="margin-top: 10px; margin-bottom: 25px; overflow-x:auto; width: 200px">
+          <tr>
+            <th>Player</th>
+            <th>Yards</th>
+          </tr>
+
+          <ng-container *ngIf="num == 1">
+            <tr class="success">
+              <tr *ngFor="let passers of week1TopReceivers">
+                <td>{{ passers.PassYds }}</td>
+                <td>{{ passers.PassYdsPoints }}</td>
+              </tr>
+          </ng-container>
+
+          <ng-container *ngIf="num == 2">
+            <tr class="success">
+              <tr *ngFor="let passers of week2TopReceivers">
+                <td>{{ passers.PassYds }}</td>
+                <td>{{ passers.PassYdsPoints }}</td>
+              </tr>
+          </ng-container>
+
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div style="text-align: center; margin-top:70px; font-size: 30px">Matches</div>   MŰKÖDŐ MEGOLDÁS A WEEKSRE
+<div class="container">
+  <div class="row">
+    <div class="table-responsive">
+      <table id="escalation" class="table table-bordered" style=" width: 800px; margin: auto; margin-top: 10px; margin-bottom: 25px">
+        <tr>
+          <th>Date</th>
+          <th>Week</th>
+          <th>Guest</th>
+          <th>Home</th>
+          <th>Score</th>
+          <th>Passed Yards</th>
+          <th>PY Points</th>
+        </tr>
+        <tr class="success">
+          <tr *ngFor="let s of match; let i=index">
+            <ng-container *ngIf="match[i].week == num">
+
+              <td>{{ match[i].date }}</td>
+              <td>{{ match[i].week }}</td>
+
+              <!-- ITT FOGJUK KIKERESNI MELYIK ID-hez MELYIK CSAPAT TARTOZIK
+              <ng-container *ngFor="let team of teams; let j=index">
+                <td *ngIf="teams[j].id==match[i].guestId">{{ teams[j].name }}</td>
+                <td *ngIf="teams[j].id==match[i].homeId">{{ teams[j].name }}</td>
+              </ng-container>
+
+              <td>{{ match[i].guestScore }} - {{ match[i].homeScore }}</td>
+              <td>{{ match[i].PassYds }}</td>
+              <td>{{ match[i].PassYdsPoints }}</td>
+            </ng-container>
+          </tr>
+      </table>
+
+    </div>
+  </div>
+</div>-->

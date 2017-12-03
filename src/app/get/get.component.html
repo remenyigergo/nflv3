@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="appname">
+
+  <head>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <link href="style.css" rel="stylesheet"/>
+    <script src="script.js"></script>
+  </head>
+
+  <body style="padding-top:80px">
+    <div ng-controller="appCtrl">
+      <p>{{greeting.text}}, world </p>
+    </div>
+  </body>
+
+</html>
+
+<script>
+  var appname = angular.module('appname', []);
+appname.controller('appCtrl', ['$scope',
+  function($scope) {
+    $scope.greeting = { text: 'Hello' };
+}]);
+</script>

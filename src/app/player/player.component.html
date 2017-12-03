@@ -1,0 +1,55 @@
+
+<table class="table table-bordered" style="width:500px; margin:auto; margin-top: 50px">
+
+  
+
+  <tbody>
+    <ng-container *ngFor="let p of player;">
+      <ng-container *ngIf="id==p.playerId">
+
+        <ng-container *ngFor="let s of players;">
+          <ng-container *ngIf="s.id == p.playerId">
+
+              <tr style="text-align: center">
+                  <th>{{s.name}}</th>
+                </tr>
+
+            <tr>
+              <td rowspan="6">
+                <img src="http://localhost:3000/image/{{id}}.jpg" style="width: 100%; margin:auto">
+              </td>
+
+            </tr>
+
+            <tr>
+                <td>College</td>
+              <td>{{p.college}}</td>
+            </tr>
+
+            <tr>
+                <td>Current cap hit</td>
+              <td>{{p.caphit}}</td>
+            </tr>
+
+            <tr>
+                <td>High School</td>
+              <td>{{p.highschool}}</td>
+            </tr>
+
+            <tr>
+                <td>Relatives</td>
+              <td>{{p.relatives}}</td>
+            </tr>
+
+            <tr>
+                <td>Twitter</td>
+              <td>{{p.twitter}}</td>
+            </tr>
+
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+
+  </tbody>
+</table>

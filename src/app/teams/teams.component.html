@@ -1,0 +1,76 @@
+<!--teams works!-->
+
+
+
+<div style="text-align: center; margin-top:70px; font-size: 30px">TEAMS</div>
+<p>{{num}}</p>
+<ng-container *ngIf="num == 1">
+  <div class="container">
+    <div class="row">
+      <div class="table-responsive">
+        <table id="escalation" class="table table-bordered" style=" width: 600px; margin: auto; margin-top: 10px; margin-bottom: 25px">
+          <tr>
+            <th>Name</th>
+            <th>Site</th>
+            <th>Division</th>
+          </tr>
+          <tr class="success">
+            <tr *ngFor="let s of teamPage1; let i=index">
+              <td>{{ teamPage1[i].name }}</td>
+              <td>
+                <a href="{{'http://'+teamPage1[i].site}}">{{teamPage1[i].site}}</a>
+              </td>
+              <td>{{ teamPage1[i].division }}</td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="num == 2">
+  <div class="container">
+    <div class="row">
+      <div class="table-responsive">
+        <table id="escalation" class="table table-bordered" style=" width: 600px; margin: auto; margin-top: 10px; margin-bottom: 25px">
+          <tr>
+            <th>Name</th>
+            <th>Site</th>
+            <th>Division</th>
+          </tr>
+          <tr class="success">
+            <tr *ngFor="let s of teamPage2; let i=index">
+              <td>{{ teamPage2[i].name }}</td>
+              <td>
+                <a href="{{'http://'+teamPage2[i].site}}">{{teamPage2[i].site}}</a>
+              </td>
+              <td>{{ teamPage2[i].division }}</td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<div style="text-align: center; margin: auto; width: 0%">
+  <nav>
+    <ul class="pagination">
+
+      <li class="page-item">
+        <a class="page-link" href="/teams/page/1">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/teams/page/2">2</a>
+      </li>
+
+    </ul>
+  </nav>
+</div>
+
+
+
+<script>
+  $(document).ready(function () {
+    $('#escalation').DataTable();
+  });
+</script>
