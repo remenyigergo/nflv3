@@ -1,0 +1,72 @@
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="#">
+          API Introduction
+        </a>
+      </li>
+      <li>
+        <a href="api/get">GET</a>
+      </li>
+      <li>
+        <a href="api/post">POST</a>
+      </li>
+      <li>
+        <a href="api/update">UDPATE</a>
+      </li>
+      <li>
+        <a href="api/delete">DELETE</a>
+      </li>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper" >
+
+    <form (ngSubmit)="deleteAPlayer()" #updateFormTeam="ngForm" >
+      <div class="form-group">
+        <label for="name">Delete any player</label>
+        <br>
+        <label for="name">ID of player</label>
+        <input type="text" class="form-control" id="id" [(ngModel)]="playermodel.id" name="id" #name="ngModel" style="width: 200px"
+          required>
+        <p *ngIf="deleted">Deleted</p>
+        <p>{{responsecode}}</p>
+        <pre>{{ jatekos | json }}</pre>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+
+    <form (ngSubmit)="deleteAMatch()" #updateFormTeam="ngForm" style="padding-top:60px">
+        <div class="form-group">
+          <label for="name">Delete any match</label>
+          <br>
+          <label for="name">ID of match</label>
+          <input type="text" class="form-control" id="id" [(ngModel)]="matchmodel.id" name="id" #name="ngModel" style="width: 200px"
+            required>
+          <p *ngIf="deleted">Deleted</p>
+          <p>{{responsecode}}</p>
+          <pre>{{ meccs | json }}</pre>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+
+      <form (ngSubmit)="deleteATeam()" #updateFormTeam="ngForm" style="padding-top:60px">
+          <div class="form-group">
+            <label for="name">Delete any team</label>
+            <br>
+            <label for="name">ID of team</label>
+            <input type="text" class="form-control" id="id" [(ngModel)]="teammodel.id" name="id" #name="ngModel" style="width: 200px"
+              required>
+            <p *ngIf="deleted">Deleted</p>
+            <p>{{responsecode}}</p>
+            <pre>{{ csapat | json }}</pre>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+
+  </div>

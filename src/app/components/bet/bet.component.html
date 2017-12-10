@@ -1,0 +1,65 @@
+<div>
+  <div class="body-text">Ticket for this match:</div>
+  <pre>
+  {{order | json}}
+</pre>
+
+
+
+  <form #checkoutForm="ngForm" (ngSubmit)="checkOut()">
+    <div class="form-container form-group">
+      <div class="personal-information">
+        <h1>Payment Information</h1>
+      </div>
+      <!-- end of personal-information -->
+      <label for="name">Select</label>
+      <input type="number" class="form-control" id="id" [(ngModel)]="formmodel.tickets" name="id" #name="ngModel" min="1" max="5">
+
+      <input type="email" class="form-control" id="email" [(ngModel)]="formmodel.email" name="email" #name="ngModel" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+        required>
+
+      <input id="column-left" class="form-control" type="text" id="firstname" [(ngModel)]="formmodel.firstname" name="firstname"
+        #name="ngModel" placeholder="First Name" style="width:300px" />
+      <input id="column-right" class="form-control" type="text" id="surname" [(ngModel)]="formmodel.surname" name="surname" #name="ngModel"
+        placeholder="Surname" style="width:300px" />
+      <input id="input-button" class="form-control" type="submit" value="Submit" style="width:300px" [disabled]="!checkoutForm.form.valid"
+      />
+    </div>
+  </form>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div>
+      <div class="body-text">Bet for this match:</div>
+      <pre>
+      {{order | json}}
+    </pre>
+
+
+
+    <form #checkoutForm="ngForm" (ngSubmit)="checkOut()">
+      <div class="form-container form-group">
+        <div class="personal-information">
+          <h1>Payment Information</h1>
+        </div>
+        <!-- end of personal-information -->
+        <label for="name">Select</label>
+        <input type="text" class="form-control" id="id" [(ngModel)]="formmodel.tickets" name="id" #name="ngModel" min="1" max="5">
+  
+        <input type="email" class="form-control" id="email" [(ngModel)]="formmodel.email" name="email" #name="ngModel" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+          required>
+  
+        <input id="column-left" class="form-control" type="text" id="firstname" [(ngModel)]="formmodel.firstname" name="firstname"
+          #name="ngModel" placeholder="First Name" style="width:300px" />
+        <input id="column-right" class="form-control" type="text" id="surname" [(ngModel)]="formmodel.surname" name="surname" #name="ngModel"
+          placeholder="Surname" style="width:300px" />
+        <input id="input-button" class="form-control" type="submit" value="Submit" style="width:300px" [disabled]="!checkoutForm.form.valid"
+        />
+      </div>
+    </form>
+  </div>
+
+
+    </div>
+  </div>

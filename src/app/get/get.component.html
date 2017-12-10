@@ -1,7 +1,61 @@
-<form (ngSubmit)="onSubmit()" #heroForm="ngForm" >
-    
-      <input type="text" class="form-control" id="name" [(ngModel)]="model.name" name="name" #name="ngModel">
-             
-             <button type="submit" class="btn btn-success">Submit</button>
- 
-</form>
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    API Introduction
+                </a>
+            </li>
+            <li>
+                <a href="api/get">GET</a>
+            </li>
+            <li>
+                <a href="api/post">POST</a>
+            </li>
+            <li>
+                <a href="api/update">UDPATE</a>
+            </li>
+            <li>
+                <a href="api/delete">DELETE</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper" style="padding-top:70px">
+
+        <div class="panel panel-default">
+            <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse Vertically</button>
+            <hr>
+            <div uib-collapse="isCollapsed">
+                <pre>{{aMatch | json}}</pre>
+            </div>
+        </div>
+
+
+
+        <form (ngSubmit)="getPlayerById()" #playerIdForm="ngForm" style="padding-top:60px">
+            <label for="name">Find a player by his ID</label>
+            <input type="text" class="form-control" id="id" [(ngModel)]="playermodel.id" name="id" #name="ngModel">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+        <div uib-collapse="isCollapsed">
+            <pre>{{playerById | json}}</pre>
+        </div>
+
+
+        <form (ngSubmit)="getPlayerByName()" #playerIdForm="ngForm" style="padding-top:60px">
+                <label for="name">Find a player by his name</label>
+                <input type="text" class="form-control" id=name [(ngModel)]="playermodel.name" name="name" #name="ngModel">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+            <div uib-collapse="isCollapsed">
+                <pre>{{playerByName | json}}</pre>
+            </div>
+
+
+
+    </div>

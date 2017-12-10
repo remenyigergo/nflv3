@@ -50,15 +50,17 @@ export class Player {
   private name;
   private birthDate;
   private position;
+  private body;
   private height;
   private weight;
   private team;
 
-  constructor(id, name, birthDate, position, height, weight, team) {
+  constructor(id, name, birthDate, position, body, height, weight, team) {
     this.id = id;
     this.name = name;
     this.birthDate = birthDate;
     this.position = position;
+    this.body = body;
     this.height = height;
     this.weight = weight;
     this.team = team;

@@ -14,11 +14,11 @@
             </tr>
             <tr class="success">
               <tr *ngFor="let player of players; let i=index">
-                <td><a href="/player/{{players[i].id}}">{{ players[i].name }}</a></td>
+                <td><a href="/player/{{players[i]._id}}">{{ players[i].name }}</a></td>
                 <td>{{ players[i].birthDate}}</td>
                 <td>{{ players[i].position }}</td>
-                <td>{{ players[i].height }} cm</td>
-                <td>{{ players[i].weight }} kg</td>
+                <td>{{ players[i].body.height }} kg</td>
+                <td>{{ players[i].body.weight }} kg</td>
                 <!--<td>{{ players[i].team }}</td>-->
                 
                   <ng-container *ngFor="let t of teams; let j=index">

@@ -1,0 +1,114 @@
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="#">
+          API Introduction
+        </a>
+      </li>
+      <li>
+        <a href="api/get">GET</a>
+      </li>
+      <li>
+        <a href="api/post">POST</a>
+      </li>
+      <li>
+        <a href="api/update">UDPATE</a>
+      </li>
+      <li>
+        <a href="api/delete">DELETE</a>
+      </li>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper" >
+
+
+    <form (ngSubmit)="onSubmit()" #updateForm="ngForm" >
+        <label for="name">Insert a new 'Match' to matches collection</label>
+      <div class="form-group">
+        <label for="name">Date</label>
+        <input type="text" class="form-control" id="date" [(ngModel)]="model.date" name="date" #name="ngModel" minlength="8" pattern="^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Week</label>
+        <input type="text" class="form-control" id="week" [(ngModel)]="model.week" name="week" #name="ngModel" pattern="[1-9][1-2]"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest ID</label>
+        <input type="text" class="form-control" id="guestId" [(ngModel)]="model.guestId" name="guestId" #name="ngModel" pattern="^([1-9]|[12][0-9]|3[0-2])$"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Home ID</label>
+        <input type="text" class="form-control" id="homeId" [(ngModel)]="model.homeId" name="homeId" pattern="^([1-9]|[12][0-9]|3[0-2])$"
+          #name="ngModel" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="guestScore" [(ngModel)]="model.guestScore" name="guestScore" #name="ngModel"
+          pattern="^[0-9]*" required>
+
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="homeScore" [(ngModel)]="model.homeScore" name="homeScore" #name="ngModel" pattern="^[0-9]*"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="PassYds" [(ngModel)]="model.PassYds" name="PassYds" #name="ngModel" pattern="^[0-9]*"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="RushYds" [(ngModel)]="model.RushYds" name="RushYds" #name="ngModel" pattern="^[0-9]*"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="RecYds" [(ngModel)]="model.RecYds" name="RecYds" #name="ngModel" pattern="^[0-9]{3}"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="PassYdsPoints" [(ngModel)]="model.PassYdsPoints" name="PassYdsPoints" #name="ngModel"
+          pattern="^[0-9]{3}" required>
+      </div>
+
+      <div class="form-group">
+          <label for="name">Guest Score</label>
+          <input type="text" class="form-control" id="RushYdsPoints" [(ngModel)]="model.RushYdsPoints" name="RushYdsPoints" #name="ngModel"
+            pattern="^[0-9]{3}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Guest Score</label>
+            <input type="text" class="form-control" id="RecYdsPoints" [(ngModel)]="model.RecYdsPoints" name="RecYdsPoints" #name="ngModel"
+              pattern="^[0-9]{3}" required>
+          </div>
+      
+
+      <button type="submit" class="btn btn-success" [disabled]="!updateForm.form.valid">Submit</button>
+
+    </form>
+  </div>
+
+  <!-- /#page-content-wrapper -->
+
+</div>

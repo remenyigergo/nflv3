@@ -5,7 +5,6 @@ import 'rxjs/add/operator/map';
 import { TeamsComponent, Team } from '../teams/teams.component'
 import { TeamService } from '../team.service'
 
-
 @Component({
   selector: 'app-matches',
   templateUrl: './matches.component.html',
@@ -56,8 +55,8 @@ export class MatchesComponent implements OnInit {
 
 
 export class Match {
-  private date;
-  private week;
+  public date;
+/*   private week;
   private guestId;
   private homeId;
   private guestScore;
@@ -67,10 +66,14 @@ export class Match {
   private RushYds;
   private RushYdsPoints;
   private RecYds;
-  private RecYdsPoints;
+  private RecYdsPoints; */
 
+  constructor(
+    s: string,
 
-  constructor(date, week, guestId, homeId, guestScore, homeScore, PassYds, PassYdsPoints, RushYds, RushYdsPoints, RecYds, RecYdsPoints) {
+  ) {}
+
+/*   constructor(date, week, guestId, homeId, guestScore, homeScore, PassYds, PassYdsPoints, RushYds, RushYdsPoints, RecYds, RecYdsPoints) {
     this.date = date;
     this.week = week;
     this.guestId = guestId;
@@ -83,7 +86,7 @@ export class Match {
     this.RushYdsPoints = RushYdsPoints;
     this.RecYds = RecYds;
     this.RecYdsPoints = RecYdsPoints;
-  }
+  } */
 
   
 

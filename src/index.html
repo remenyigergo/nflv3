@@ -5,22 +5,9 @@
   <meta charset="utf-8">
   <title>NFL STATS 2016 SEASON</title>
   <base href="/">
-  <!-- <nav class="navbar navbar-inverse navbar-fixed-top" >
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/home">NFL STATS</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/home">Home</a></li>
-        <li><a href="/stats">Stats</a></li>
-        <li><a href="/matches">Matches</a></li>
-        <li><a href="/teams">Teams</a></li>
-        <li><a href="/players">Players</a></li>
-      </ul>
-    </div>
-  </nav> -->
+
   
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 0px">
     <a class="navbar-brand" href="/home">NFL STATS</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -44,15 +31,28 @@
         <li class="nav-item">
           <a class="nav-link" href="/players">Players</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/api">API</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="/buy">Buy Tickets</a>
+        </li> 
       </ul>
-      <span class="navbar-text">
-        Navbar text with an inline element
+      <span class="navbar-text" *ngIf="{{localStorage.username}}==undefined">
+          <a class="nav-link" href="/login">Login</a>
       </span>
+      <span class="navbar-text">
+          <a class="nav-link" href="/signup">Sign up</a>
+      </span>
+      <span class="navbar-text" >
+        <a class="nav-link" href="/profile">Profile</a>
+    </span>
     </div>
   </nav>
   
   
-  <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   

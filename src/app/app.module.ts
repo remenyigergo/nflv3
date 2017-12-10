@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TeamsComponent } from './teams/teams.component';
@@ -16,7 +15,37 @@ import { PlayerService } from './player.service';
 import { PlayerComponent } from './player/player.component';
 import { Routes } from '@angular/router';
 import { WeeksComponent } from './weeks/weeks.component';
+import { ApiComponent } from './api/api.component';
 import { GetComponent } from './get/get.component';
+import { PostComponent } from './post/post.component';
+import { UpdateComponent } from './update/update.component'
+
+import { GetService } from './get.service';
+import { PostService } from './post.service';
+import { FormsModule } from '@angular/forms';
+import { UpdateService } from './update.service';
+import { DeleteComponent } from './delete/delete.component';
+import { DeleteService } from './delete.service';
+
+import { LoginComponent } from './components/login/login.component';
+import { EmailComponent } from './components/email/email.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { MembersComponent } from './components/members/members.component';
+import { BuyComponent } from './buy/buy.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { AuthService } from './services/auth.service';
+import { AlertService } from './services/alert.service';
+import { UserService } from './services/user.service'
+import { RegisterService } from './services/register.service';
+
+import { AuthGuard } from './_guard/auth.guard';
+import { SuccessComponent } from './success/success.component'
+import { MailService } from './services/mail.service';
+import { FailedComponent } from './failed/failed.component';
+import { GlobalsComponent } from './globals/globals.component';
+import { BetComponent } from './components/bet/bet.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 
 
@@ -26,17 +55,32 @@ import { GetComponent } from './get/get.component';
     AppComponent,
     TeamsComponent,
     HomeComponent,
-    MatchesComponent, 
+    MatchesComponent,
     PlayersComponent,
     PlayerComponent,
     WeeksComponent,
-    GetComponent
+    ApiComponent,
+    GetComponent,
+    PostComponent,
+    UpdateComponent,
+    DeleteComponent,
+    LoginComponent,
+    EmailComponent,
+    SignupComponent,
+    MembersComponent,
+    BuyComponent,
+    CheckoutComponent,
+    SuccessComponent,
+    FailedComponent,
+    GlobalsComponent,
+    BetComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
     CommonModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path: '#',
@@ -72,11 +116,83 @@ import { GetComponent } from './get/get.component';
       component: PlayerComponent,
     }]),
     RouterModule.forRoot([{
-      path: 'get',
+      path: 'api',
+      component: ApiComponent,
+    }]),
+    RouterModule.forRoot([{
+      path: 'api/get',
       component: GetComponent,
-    }])
+    }]),
+    RouterModule.forRoot([{
+      path: 'api/post',
+      component: PostComponent,
+    }]),
+    RouterModule.forRoot([{
+      path: 'api/update',
+      component: UpdateComponent,
+    }]),
+    RouterModule.forRoot([{
+      path: 'api/delete',
+      component: DeleteComponent,
+    }]),
+    RouterModule.forRoot([{
+      path: 'buy',
+      component: BuyComponent,
+      canActivate: [AuthGuard]
+    }]),
+    RouterModule.forRoot([{
+      path: 'checkout',
+      component: CheckoutComponent,
+      canActivate: [AuthGuard]
+    }]),
+    RouterModule.forRoot([{
+      path: 'login',
+      component: LoginComponent,
+    }]),
+    RouterModule.forRoot([{
+      path: 'signup',
+      component: SignupComponent,
+    }]),
+    RouterModule.forRoot([{
+      path: 'success',
+      component: SuccessComponent,
+      canActivate: [AuthGuard]
+    }]),
+    RouterModule.forRoot([{
+      path: 'failed',
+      component: FailedComponent,
+      canActivate: [AuthGuard]
+    }]),
+    RouterModule.forRoot([{
+      path: 'bet',
+      component: BetComponent,
+      canActivate: [AuthGuard]
+    }]),
+    RouterModule.forRoot([{
+      path: 'profile',
+      component: ProfileComponent,
+      canActivate: [AuthGuard]
+    }]),
+
   ],
-  providers: [TeamService, MatchService, PlayerService],
+  providers: [
+    TeamService,
+    MatchService,
+    PlayerService,
+    GetService,
+    PostService,
+    UpdateService,
+    DeleteService,
+    AuthService,
+    AlertService,
+    UserService,
+    RegisterService,
+    AuthGuard,
+    MailService,
+    GlobalsComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

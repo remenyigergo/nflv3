@@ -15,8 +15,9 @@ export class PlayerService {
     return player;
   }
 
-  public getPlayer() {
-    var player = this.http.get('http://localhost:3000/player')
+  public getPlayer(id) {
+    console.log('http://localhost:3000/player/'+id);
+    var player = this.http.get('http://localhost:3000/player/'+id)
     .map(response => response.json());
   console.log(player);
     return player;

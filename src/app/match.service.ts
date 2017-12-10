@@ -98,4 +98,10 @@ export class MatchService {
     console.log(a);
       return a;
   }
+
+  public getUpComingMatches() {
+    var a = this.http.get('http://localhost:3000/matches/upcoming')
+      .map(response => response.json());
+      return a;
+  }
 }

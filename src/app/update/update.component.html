@@ -1,0 +1,242 @@
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav" >
+      <li class="sidebar-brand">
+        <a href="#">
+          API Introduction
+        </a>
+      </li>
+      <li>
+        <a href="api/get">GET</a>
+      </li>
+      <li>
+        <a href="api/post">POST</a>
+      </li>
+      <li>
+        <a href="api/update">UDPATE</a>
+      </li>
+      <li>
+        <a href="api/delete">DELETE</a>
+      </li>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+
+
+    <form (ngSubmit)="updateAMatch()" #updateForm="ngForm">
+      <div class="form-group">
+        <label for="name">Update any match</label>
+        <br>
+        <label for="id">ID of match</label>
+        <input type="text" class="form-control" id="id" [(ngModel)]="matchmodel.id" name="id" #name="ngModel" minlength="25" maxlength="25"
+          pattern="" style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Date</label>
+        <input type="text" class="form-control" id="date" [(ngModel)]="matchmodel.date" name="date" #name="ngModel" minlength="8"
+          pattern="^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$" style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Week</label>
+        <input type="text" class="form-control" id="week" [(ngModel)]="matchmodel.week" name="week" #name="ngModel" pattern="[1-9][1-2]"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest ID</label>
+        <input type="text" class="form-control" id="guestId" [(ngModel)]="matchmodel.guestId" name="guestId" #name="ngModel" pattern="^([1-9]|[12][0-9]|3[0-2])$"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Home ID</label>
+        <input type="text" class="form-control" id="homeId" [(ngModel)]="matchmodel.homeId" name="homeId" pattern="^([1-9]|[12][0-9]|3[0-2])$"
+          style="width: 200px" #name="ngModel" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="guestScore" [(ngModel)]="matchmodel.guestScore" name="guestScore" #name="ngModel"
+          style="width: 200px" pattern="^[0-9]*" required>
+
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="homeScore" [(ngModel)]="matchmodel.homeScore" name="homeScore" #name="ngModel"
+          pattern="^[0-9]*" style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="PassYds" [(ngModel)]="matchmodel.PassYds" name="PassYds" #name="ngModel" pattern="^[0-9]*"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="RushYds" [(ngModel)]="matchmodel.RushYds" name="RushYds" #name="ngModel" pattern="^[0-9]*"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="RecYds" [(ngModel)]="matchmodel.RecYds" name="RecYds" #name="ngModel" pattern="^[0-9]{3}"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="PassYdsPoints" [(ngModel)]="matchmodel.PassYdsPoints" name="PassYdsPoints" #name="ngModel"
+          style="width: 200px" pattern="^[0-9]{3}" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="RushYdsPoints" [(ngModel)]="matchmodel.RushYdsPoints" name="RushYdsPoints" #name="ngModel"
+          style="width: 200px" pattern="^[0-9]{3}" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Guest Score</label>
+        <input type="text" class="form-control" id="RecYdsPoints" [(ngModel)]="matchmodel.RecYdsPoints" name="RecYdsPoints" #name="ngModel"
+          style="width: 200px" pattern="^[0-9]{3}" required>
+      </div>
+
+
+      <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+
+
+
+    <form (ngSubmit)="updateATeam()" #updateFormTeam="ngForm" style="padding-top:60px">
+      <div class="form-group">
+        <label for="name">Update any team</label>
+        <br>
+        <label for="name">ID of team</label>
+        <input type="text" class="form-control" id="id" [(ngModel)]="teammodel.id" name="id" #name="ngModel" style="width: 200px"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="teammodel.name" name="name" #name="ngModel" style="width: 200px"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Site</label>
+        <input type="site" class="form-control" id="site" [(ngModel)]="teammodel.site" name="site" #name="ngModel" style="width: 200px"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Division</label>
+        <input type="division" class="form-control" id="division" [(ngModel)]="teammodel.division" name="division" #name="ngModel"
+          style="width: 200px" required>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+
+    <form (ngSubmit)="updateAPlayer()" #updateFormPlayer="ngForm" style="padding-top:60px">
+      <div class="form-group">
+        <label for="name">Update any player</label>
+        <br>
+        <label for="name">ID of player</label>
+        <input type="text" class="form-control" id="id" [(ngModel)]="playermodel.id" name="id" #name="ngModel" style="width: 200px"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="playermodel.name" name="name" #name="ngModel" style="width: 200px"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Birth Date</label>
+        <input type="site" class="form-control" id="birthdate" [(ngModel)]="playermodel.birthdate" name="birthdate" #name="ngModel" style="width: 200px"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Position</label>
+        <input type="division" class="form-control" id="position" [(ngModel)]="playermodel.position" name="position" #name="ngModel"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Height</label>
+        <input type="division" class="form-control" id="height" [(ngModel)]="playermodel.height" name="height" #name="ngModel"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Weight</label>
+        <input type="division" class="form-control" id="weight" [(ngModel)]="playermodel.weight" name="weight" #name="ngModel"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Team</label>
+        <input type="division" class="form-control" id="team" [(ngModel)]="playermodel.team" name="team" #name="ngModel"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Draft team</label>
+        <input type="division" class="form-control" id="draftteam" [(ngModel)]="playermodel.draftteam" name="draftteam" #name="ngModel"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Current team</label>
+        <input type="division" class="form-control" id="currentteam" [(ngModel)]="playermodel.currentteam" name="currentteam" #name="ngModel"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">College</label>
+        <input type="division" class="form-control" id="college" [(ngModel)]="playermodel.college" name="college" #name="ngModel"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Caphit</label>
+        <input type="division" class="form-control" id="caphit" [(ngModel)]="playermodel.caphit" name="caphit" #name="ngModel"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">High School</label>
+        <input type="division" class="form-control" id="highschool" [(ngModel)]="playermodel.highschool" name="highschool" #name="ngModel"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Relatives</label>
+        <input type="division" class="form-control" id="relatives" [(ngModel)]="playermodel.relatives" name="relatives" #name="ngModel"
+          style="width: 200px" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Twitter</label>
+        <input type="division" class="form-control" id="twitter" [(ngModel)]="playermodel.twitter" name="twitter" #name="ngModel"
+          style="width: 200px" required>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+  </div>
+  <!-- /#page-content-wrapper -->
+
+</div>

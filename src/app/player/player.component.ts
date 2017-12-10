@@ -17,28 +17,29 @@ import { NgModule, Input } from '@angular/core';
 export class PlayerComponent implements OnInit {
 
   id: number;
+  objectidString: any;
   player: PlayerDetailed = PlayerDetailed[4];
   players: Player = Player[32];
+  specificPlayer: Player;
 
   constructor(private route: ActivatedRoute, private playerService: PlayerService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
-
+      this.objectidString = params['id'];
       // In a real app: dispatch action to load the details here.
     });
 
-    this.playerService.getPlayer().subscribe(
+    this.playerService.getPlayer(this.objectidString).subscribe(
       player => {
-        this.player = player;
+        this.specificPlayer = player;
       });
 
       this.playerService.getPlayers().subscribe(
         players => {
           this.players = players;
         });
-
       
   }
 
@@ -55,8 +56,8 @@ export class PlayerDetailed extends Player {
   private relatives;
   private twitter;
 
-  constructor(playerId, college, caphit, highschool, relatives, twitter, id, name, birthDate, position, height, weight, team) {
-    super(id, name, birthDate, position, height, weight, team);
+  constructor(playerId, college, caphit, highschool, relatives, twitter, id, name, birthDate, position, body, height, weight, team) {
+    super(id, name, birthDate, position, body, height, weight, team);
     this.playerId = playerId;
     this.college = college;
     this.caphit = caphit;

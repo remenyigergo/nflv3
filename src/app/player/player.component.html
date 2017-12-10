@@ -4,22 +4,23 @@
   
 
   <tbody>
-    <ng-container *ngFor="let p of player;">
-      <ng-container *ngIf="id==p.playerId">
-
-        <ng-container *ngFor="let s of players;">
-          <ng-container *ngIf="s.id == p.playerId">
+    <ng-container *ngFor="let p of specificPlayer;">
 
               <tr style="text-align: center">
-                  <th>{{s.name}}</th>
+                  <th>{{p.name}}</th>
                 </tr>
 
             <tr>
-              <td rowspan="6">
-                <img src="http://localhost:3000/image/{{id}}.jpg" style="width: 100%; margin:auto">
+              <td rowspan="9">
+                <img src="http://localhost:3000/image/{{p.id}}.jpg" style="width: 100%; margin:auto">
               </td>
 
             </tr>
+
+            <tr>
+              <td>Birth Date</td>
+            <td>{{p.birthDate}}</td>
+          </tr>
 
             <tr>
                 <td>College</td>
@@ -46,9 +47,16 @@
               <td>{{p.twitter}}</td>
             </tr>
 
-          </ng-container>
-        </ng-container>
-      </ng-container>
+            <tr>
+              <td>Drafted</td>
+            <td>{{p.teams.draft}}</td>
+          </tr>
+          <tr>
+            <td>Current</td>
+          <td>{{p.teams.current}}</td>
+        </tr>
+
+          
     </ng-container>
 
   </tbody>

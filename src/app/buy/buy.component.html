@@ -1,0 +1,47 @@
+<div class="container" style="padding-top:60px">
+  <div class="row">
+    <div class="table-responsive">
+      <h1 style="text-align:center">Buy tickets!</h1>
+      <table id="escalation" class="table table-bordered" style="margin: auto; margin-top: 10px; margin-bottom: 25px; overflow-x:auto;">
+        <tr>
+          <th>Date</th>
+          <th>Week</th>
+          <th>Guest</th>
+          <th>Home</th>
+          <th>Ticket Available</th>
+          <th></th>
+          <th></th>
+        </tr>
+
+        <tr *ngFor="let m of upComingMatches; let i=index">
+          <td>{{ m.date}}</td>
+          <td>{{ m.week}}</td>
+          <td>{{ m.guestId }}</td>
+          <td>{{ m.homeId }}</td>
+          <td *ngIf="m.tickets != null;else other_content">
+            {{m.tickets}}
+          </td>
+
+          <ng-template #other_content>
+            <td>0</td>
+          </ng-template>
+
+          <td>
+            <button type="submit" class="btn btn-success" (click)="Bet(m)" *ngIf="m.tickets!=null;else nobet">Bet</button>
+          </td>
+          <ng-template #nobet>
+            MATCH EXPIRED
+          </ng-template>
+          <td>
+            <button type="submit" class="btn btn-success" (click)="Purchase(m)" *ngIf="m.tickets!=null;else out">Purchase</button>
+             10000 per ticket
+          </td>
+          <ng-template #out>
+            OUT OF TICKETS
+          </ng-template>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</div>

@@ -6,6 +6,8 @@ var teams = require('./server/routes/teams');
 var matches = require('./server/routes/matches');
 var players = require('./server/routes/players');
 var player = require('./server/routes/player');
+var users = require('./server/routes/users');
+var tickets = require('./server/routes/tickets');
 
 
 //var index = require('./routes/index');
@@ -32,14 +34,22 @@ app.use('/api', api);
 app.use('/teams', teams);
 app.use('/matches', matches);
 app.use('/players', players);
-app.use('/player', player);
+//app.use('/player', player);
+app.use('/users', users);
+app.use('/tickets', tickets);
 
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 
 app.get('/players/:id', function (req, res) {
     res.send(req.params.id)
   })
+
 
 
 app.listen(port, function() {
