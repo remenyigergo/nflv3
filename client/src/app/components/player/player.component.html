@@ -1,0 +1,61 @@
+
+<table class="table table-bordered" style="width:500px; margin:auto; margin-top: 50px">
+
+  
+
+  <tbody>
+
+              <tr style="text-align: center">
+                  <th>{{specificPlayer.name}}</th>
+                </tr>
+
+            <tr>
+              <td rowspan="9">
+                <img src="http://localhost:3005/image/{{specificPlayer.id}}.jpg" style="width: 100%; margin:auto">
+              </td>
+
+            </tr>
+
+            <tr>
+              <td>Birth Date</td>
+            <td>{{specificPlayer.birthDate}}</td>
+          </tr>
+
+            <tr>
+                <td>College</td>
+              <td>{{specificPlayer.college}}</td>
+            </tr>
+
+            <tr>
+                <td>Current cap hit</td>
+              <td>{{specificPlayer.caphit}}</td>
+            </tr>
+
+            <tr>
+                <td>High School</td>
+              <td>{{specificPlayer.highschool}}</td>
+            </tr>
+
+            <tr>
+                <td>Relatives</td>
+              <td>{{specificPlayer.relatives}}</td>
+            </tr>
+
+            <tr>
+                <td>Twitter</td>
+              <td>{{specificPlayer.twitter}}</td>
+            </tr>
+
+            <tr>
+              <td>Drafted</td>
+            <td>{{specificPlayer.teams.draft}}</td>
+          </tr>
+          <tr>
+            <td>Current</td>
+          <td>{{specificPlayer.teams.current}}</td>
+        </tr>
+
+          
+
+  </tbody>
+</table>
